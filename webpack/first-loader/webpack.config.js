@@ -14,9 +14,16 @@ module.exports = {
       {
         test: /\.js$/,
         use: [
+          './loaders/pitch-loader.js',
           './loaders/log-loader.js',
           './loaders/sync-loader.js',
           './loaders/async-loader.js',
+        ]
+      },
+      {
+        test: /\.webp$/,
+        use: [
+          './loaders/raw-loader.js',
         ]
       }
     ],

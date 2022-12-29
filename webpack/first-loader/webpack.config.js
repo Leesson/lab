@@ -16,8 +16,10 @@ module.exports = {
         use: [
           './loaders/pitch-loader.js',
           './loaders/log-loader.js',
+          './loaders/clean-log-loader.js',
           './loaders/sync-loader.js',
           './loaders/async-loader.js',
+          './loaders/log-loader.js',
         ]
       },
       {
@@ -33,4 +35,5 @@ module.exports = {
       template: path.resolve(__dirname, 'public/index.html')
     }),
   ],
+  devtool: 'cheap-module-source-map',
 }

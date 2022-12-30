@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "level": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

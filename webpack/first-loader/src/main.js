@@ -7,4 +7,4 @@ console.log('log');
 console.warn('warn');
 console.error('error');
 
-const d = /*#__PURE__*/ multi(2, 3);
+const d = multi(2, 3);

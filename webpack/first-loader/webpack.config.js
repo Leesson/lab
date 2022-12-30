@@ -16,10 +16,21 @@ module.exports = {
         use: [
           './loaders/pitch-loader.js',
           './loaders/log-loader.js',
-          './loaders/clean-log-loader.js',
+          {
+            loader: './loaders/clean-log-loader/',
+            options: {
+              level: 'warn'
+            }
+          },
           './loaders/sync-loader.js',
           './loaders/async-loader.js',
           './loaders/log-loader.js',
+        ]
+      },
+      {
+        test: /\.ts$/,
+        use: [
+          'ts-loader',
         ]
       },
       {
@@ -35,5 +46,8 @@ module.exports = {
       template: path.resolve(__dirname, 'public/index.html')
     }),
   ],
+  optimization: {
+    usedExports: true,
+  },
   devtool: 'cheap-module-source-map',
 }

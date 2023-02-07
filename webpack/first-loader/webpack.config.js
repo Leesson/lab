@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const EmptyPlugin = require('./plugins/empty-plugin');
 
 module.exports = {
   mode: 'development',
@@ -14,17 +15,20 @@ module.exports = {
       {
         test: /\.js$/,
         use: [
-          './loaders/pitch-loader.js',
-          './loaders/log-loader.js',
           {
-            loader: './loaders/clean-log-loader/',
-            options: {
-              level: 'warn'
-            }
+            loader: 'babel-loader',
           },
-          './loaders/sync-loader.js',
-          './loaders/async-loader.js',
-          './loaders/log-loader.js',
+          // './loaders/pitch-loader.js',
+          // './loaders/log-loader.js',
+          // {
+          //   loader: './loaders/clean-log-loader/',
+          //   options: {
+          //     level: 'warn'
+          //   }
+          // },
+          // './loaders/sync-loader.js',
+          // './loaders/async-loader.js',
+          // './loaders/log-loader.js',
         ]
       },
       {
@@ -45,6 +49,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html')
     }),
+    new EmptyPlugin(),
   ],
   optimization: {
     usedExports: true,

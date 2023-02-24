@@ -45,7 +45,7 @@ class LinkedHashMap {
     this.hashMap = new Map();
 
     // 初始化访问序列双向列表，越靠后的数据访问时间越近
-    // head 和 tail为固定的头尾节点，方便链表操作
+    // head 和 tail 为固定的头尾节点，方便链表操作
     this.head = new LinkNode('head', HEAD_VAL);
     this.tail = new LinkNode('tail', TAIL_VAL);
 
